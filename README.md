@@ -1,25 +1,60 @@
-# WordPress-Plugin
+# WordPress Plugin Library
 
-WordPress Plugin Class with Hookable
+A simple, practical foundation for building WordPress plugins faster and more reliably.
 
-A structured foundation for building WordPress plugins using modern PHP patterns and practices.
+## What this library gives you
 
-## Features
+Instead of starting from scratch every time you build a WordPress plugin, this library provides the essential building blocks you need:
 
-- **Singleton Pattern**: Ensures single instance of plugin classes
-- **Hook Management**: Annotation-based WordPress hook registration  
-- **View System**: Template rendering and management
-- **API Support**: REST API endpoint registration
-- **Utility Functions**: Common string manipulation functions
+- **Solid foundation** for plugin structure and lifecycle
+- **Simple hook system** that eliminates boilerplate code
+- **Template engine** for clean HTML/PHP separation
+- **API builder** for creating REST endpoints easily
+- **Helpful utilities** for common WordPress tasks
 
 ## Documentation
 
-Comprehensive documentation is available in the [`docs/`](docs/) folder:
+Simple, practical guides are available in the [`docs/`](docs/) folder:
 
-- [**Getting Started**](docs/README.md) - Overview and quick start guide
-- [**Core Components**](docs/core/) - Main classes and traits
-- [**Hook Decorators**](docs/hooks/) - Advanced hook management
-- [**Utilities**](docs/utilities/) - Helper functions and utilities
+- [**Getting Started**](docs/getting-started.md) - Quick setup and overview
+- [**Plugin Foundation**](docs/plugin-foundation.md) - Main plugin structure
+- [**Hooks and Actions**](docs/hooks-and-actions.md) - Easy WordPress hook integration
+- [**Templates and Views**](docs/templates-and-views.md) - Display logic and HTML templates
+- [**API Endpoints**](docs/api-endpoints.md) - REST API creation
+- [**Utilities**](docs/utilities.md) - Helper functions and tools
+
+## Why use this?
+
+Building WordPress plugins involves a lot of repetitive setup code. This library handles the boring stuff so you can focus on your plugin's unique functionality.
+
+**Before:**
+```php
+// Lots of manual hook registration
+add_action('init', [$this, 'init']);
+add_filter('the_content', [$this, 'modifyContent']);
+add_action('wp_ajax_my_action', [$this, 'handleAjax']);
+// ... and so on
+```
+
+**After:**
+```php
+/**
+ * @action init
+ */
+public function init() { }
+
+/**
+ * @filter the_content  
+ */
+public function modifyContent($content) { }
+
+/**
+ * @ajax my_action
+ */
+public function handleAjax() { }
+```
+
+Clean, simple, and less error-prone.
 
 ## Quick Start
 
